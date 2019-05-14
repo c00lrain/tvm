@@ -90,7 +90,6 @@ RegisterTVMOperator reg({
     {Symbol::fromQualString("aten::add"),
      [](Node* node, tvm::Array<tvm::relay::Expr> inputs) {
        auto op = tvm::relay::Op::Get("add");
-       // registerSchedule("add");
        AT_ASSERT(inputs.size() == 3);
        tvm::Array<tvm::relay::Expr> add_inputs = {inputs[0], inputs[1]};
        // Handle pytorch's value argument in add
@@ -104,7 +103,6 @@ RegisterTVMOperator reg({
     {Symbol::fromQualString("aten::add_"),
      [](Node* node, tvm::Array<tvm::relay::Expr> inputs) {
        auto op = tvm::relay::Op::Get("add");
-       // registerSchedule("add");
        AT_ASSERT(inputs.size() == 3);
        tvm::Array<tvm::relay::Expr> add_inputs = {inputs[0], inputs[1]};
        // Handle pytorch's value argument in add
